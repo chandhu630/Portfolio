@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+      
+       
+.navbar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    align-items: center;
+    color: white;
+    width: 80%;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    position: relative;
+    padding: 5px;
+    transition: color 0.5s;
+}
+
+/* Underline Effect */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: rgb(212, 31, 79);
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%; 
+}
+
+.nav-links li a.active {
+    color: rgb(212, 31, 79); /* Optional: Highlight active link */
+}
+
+.logo{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Hamburger Button Styling */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    color: white;
+}
+.hamburger:hover{
+    color: rgb(212, 31, 79);
+}
+
+.hamburger i {
+    transition: transform 0.3s;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        height: 80vh;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color:rgb(212, 31, 79) ;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+   
+}
+
+/* Media Query for devices with max width 480px */
+@media (max-width: 480px) {
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        gap:20px;
+        align-items:center;
+        justify-content:space-around;
+        padding: 10px;
+        width:90%;
+        border: px solid red;
+    }
+    .shortinfo h1 {
+        font-size: 1.5rem;
+    }
+   
+}
+.shortinfo {
+    border: px solid red;
+    height: 90vh; /* Ensures the section takes 90% of the viewport height */
+    width: 100%; /* Full width */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    color: white;
+    /* Proper background image properties */
+    background-image: url('pics/background.png');
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-repeat: no-repeat; /* Prevents repetition of the image */
+    background-position: center; /* Centers the image in the section */
+}
+.shortinfoStart
+{
+    width: 80%;
+    margin: auto;
+
+}
+
+@media (max-width: 480px) {
+    .shortinfo {
+        background-image: url('pics/mypic.png'); /* Change the background image for mobile */
+        background-size: cover; /* Ensure it covers the section */
+        background-position: start center;
+        background-repeat: no-repeat;
+        width:100%;
+    }
+    .software 
+    {
+        font-size: 20px;
+        padding: 0px 30px;
+        font-weight:bold;
+       
+    }
+    .infoIntroduction  
+    {
+        width:100%;
+        height: 200px;
+        border: px solid red;
+        margin-top: 100px;
+        margin-bottom:auto;
+    }
+}
+
+
+ .aboutus {
+    display: flex;
+    gap: 80px;
+    width: 80%;
+    margin: auto;
+    border: px solid red;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+}
+
+.aboutUser {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.details-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.details-section.active {
+    display: block;
+}
+
+.aboutContent {
+    width: 850px;
+    height: auto;
+    text-align: justify;
+}
+
+.aboutContent h1 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.aboutContent p {
+    cursor: pointer;
+    color: lightblue;
+    font-weight: bold;
+}
+
+.aboutContent ul {
+    list-style: none;
+    padding: 0;
+}
+
+.aboutContent li {
+    margin: 5px 0;
+}
+
+.hoverAbout:hover {
+    text-decoration: underline rgb(212, 31, 79);
+}
+
+@media (max-width: 1200px) {
+    .aboutContent {
+        width: 700px;
+    }
+}
+
+@media (max-width: 992px) {
+    .aboutus {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .aboutContent {
+        width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutUser {
+        width: 300px;
+    }
+
+    .aboutContent {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutus {
+        gap: 20px;
+    }
+
+    .aboutUser {
+        width: 250px;
+    }
+
+    .aboutContent h1 {
+        font-size: 1.8rem;
+    }
+
+    .aboutContent {
+        text-align: left;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .aboutContent p {
+        font-size: 1rem;
+    }
+
+    .details-section ul {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+   
+
+    .aboutus {
+        flex-direction: column; /* Stack items */
+        height: 100vh;
+        border: px solid red;
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .aboutUser {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .aboutUserDiv {
+        width: 100%; /* Full width for image container */
+        
+    }
+
+    .aboutContent {
+        width: 100%; /* Full width for text content */
+        text-align: justify;
+        padding: 10px;
+    }
+
+}
+
+    .Services {
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.display_flexService {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin: auto;
+}
+
+.serviceDiv {
+    width: 330px;
+    height: auto;
+    border-radius: 10px;
+    padding: 40px;
+    color: white;
+    background: linear-gradient(45deg, #444, #888);
+    animation: gradient-bg 5s ease infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: start;
+}
+
+.serviceDiv:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, rgb(212, 31, 79), rgb(212, 31, 79));
+}
+
+@keyframes gradient-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.learnmore {
+    margin-top: 20px;
+    background-color: rgb(97, 94, 94);
+    border: none;
+    color: white;
+    padding: none;
+}
+
+.SeeMore {
+    margin: 0 auto;
+    width: 150px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: 1px solid rgb(212, 31, 79);
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .display_flexService {
+        gap: 30px;
+    }
+
+    .serviceDiv {
+        width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .Services {
+        flex-direction: column;
+    }
+
+    .serviceDiv {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .display_flexService {
+        justify-content: center;
+    }
+
+    .serviceDiv {
+        width: 250px;
+        padding: 20px;
+    }
+
+    .serviceDiv h1 {
+        font-size: 1.2rem;
+    }
+
+    .serviceDiv i {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .serviceDiv {
+        width: 220px;
+        padding: 15px;
+    }
+
+    .serviceDiv h1 {
+        font-size: 1rem;
+    }
+
+    .serviceDiv i {
+        font-size: 25px;
+    }
+
+    .serviceDiv p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .serviceDiv {
+        width: 200px;
+    }
+
+    .serviceDiv h1 {
+        font-size: 0.9rem;
+    }
+
+    .serviceDiv i {
+        font-size: 20px;
+    }
+
+    .serviceDiv p {
+        font-size: 0.8rem;
+    }
+    .Services 
+    {
+        height: 100vh;
+        border: px solid red;
+        margin-top: 60px;
+    }
+}
+
+        
+ .MyWorkDisplay_Flex {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+    border:px solid red;
+}
+
+.divImag {
+    position: relative;
+    width: 30%;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden.show {
+    display: block;
+}
+
+.workPics {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.divImag:hover .workPics {
+    transform: scale(1.1);
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full height of the image */
+    background: linear-gradient(180deg, rgba(128, 128, 128, 0.9), rgba(212, 31, 79, 0.8));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.1s ease, transform 0.5s ease;
+    transform: translateY(100%);
+}
+
+.divImag.active .content {
+    opacity: 1;
+    transform: translateY(0);
+    justify-content: center;
+}
+
+.SeeMore:hover {
+    background-color: rgb(212, 31, 79);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .divImag {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .divImag {
+        width: 100%;
+    }
+    .Mywork
+    {
+        height: 100vh;
+        display: flex;
+        border: 3px border green;
+        align-items: center;
+        margin-top: 90%;
+    }
+}
+
+
+        .button-container {
+        display: flex;
+        margin-top: 40px;
+        }
+
+ .Contactme {
+    color: white;
+    padding: 50px 0;
+    border:px solid red;
+}
+
+.displayFlexContact {
+    display: flex;
+    width: 80%;
+    border:px solid red;
+    margin: auto;
+  
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.ContactText {
+    width: 40%;
+    height: 350px;
+    padding: 20px;
+    border: px solid red;
+}
+
+.DownloadCv {
+    padding: 15px;
+    border-radius: 5px;
+    width: 170px;
+    background-color: rgb(212, 31, 79);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 37px;
+}
+
+.ContactFields {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 350px;
+    gap: 20px;
+}
+
+
+.fields {
+    padding: 15px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgb(42, 39, 39);
+    border: none;
+}
+
+.textareaMessage {
+    width: 100%;
+    padding: 15px;
+    height: 120px;
+    border-radius: 5px;
+    background-color: rgb(42, 40, 40);
+    border: none;
+}
+
+.SubmitButton {
+    background-color: rgb(212, 31, 79);
+    padding: 15px;
+    border-radius: 5px;
+    width: 150px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#successMessage {
+ 
+    font-weight: bold;
+}
+
+.email {
+    text-decoration: none;
+    color: white;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large Desktop & Tablet View (1200px and above) */
+@media (max-width: 1200px) {
+    .displayFlexContact {
+        width: 90%;
+    }
+    .ContactText {
+        width: 40%;
+    }
+}
+
+/* Tablet View (992px to 1200px) */
+@media (max-width: 992px) {
+    .displayFlexContact {
+        flex-direction: column;
+        width: 100%;
+    }
+    .ContactText {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .DownloadCv {
+        width: 150px;
+    }
+    .ContactFields {
+        width: 100%;
+    }
+}
+
+/* Mobile View (768px to 992px) */
+@media (max-width: 768px) {
+    .ContactText {
+        width: 100%;
+    }
+    .DownloadCv {
+        width: 150px;
+        margin-top: 20px;
+    }
+    .fields {
+        padding: 12px;
+    }
+    .textareaMessage {
+        padding: 12px;
+        height: 100px;
+    }
+    .SubmitButton {
+        width: 130px;
+        padding: 12px;
+    }
+}
+
+/* Small Mobile View (576px to 768px) */
+@media (max-width: 576px) {
+    .ContactText {
+        width: 100%;
+    
+        margin-bottom: 20px;
+    }
+    .DisplayFlexContact {
+        flex-direction: column;
+    }
+    .fields {
+        padding: 10px;
+        font-size: 14px;
+        
+    }
+    .textareaMessage {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .SubmitButton {
+        width: 120px;
+        padding: 10px;
+    }
+}
+
+/* Very Small Mobile View (Below 576px) */
+@media (max-width: 480px) {
+    .fields {
+        padding:10px;
+        font-size: 12px;
+        border: px solid red;
+    }
+    .textareaMessage {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .SubmitButton {
+        width: 110px;
+        padding: 15px;
+    }
+    .DownloadCv {
+        width: 120px;
+    }
+    .ContactText
+    {
+      
+        margin-right: 10%;
+
+    }
+    .ContactFields {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left:5%;
+    margin-right: 20%;
+    height: 350px;
+    gap: 20px;
+}
+#successMessage {
+ 
+ font-weight: bold;
+ margin-bottom: 30px;
+}
+.Contactme
+{
+    height: 100vh;
+    margin-top: 50%;
+    border: px solid red;
+    width: 80%;
+    margin: auto;
+    margin-top: 50%;
+
+}
+}
+
+    </style>
+</head>
+<body>
+    <div style="  background-color: black;">
+
+        <nav class="navbar">
+            <a href="" class="logo"><span style="color: rgb(212, 31, 79)">C</span>handra.</a>
+         
+            <button class="hamburger" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i> <!-- Default Hamburger Icon -->
+                <i class="fa-solid fa-xmark hidden"></i> <!-- Hidden Cancel Icon -->
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#mywork">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Short Info Section -->
+         <div class="shortinfoStart">
+            <div id="home" class="shortinfo">
+                <div class="infoIntroduction">
+                    <span class="software" style="color: #888;">Software Engineer</span>
+                    <h1 class="software">Hi, I'm <b style="color:  rgb(212, 31, 79);">Chandra</b></h1>
+                    <h1 class="software">Kala From Palamaner</h1>
+                </div>
+                <div class="minePicture">
+                    <!-- <img src="pics/chandrakala.png" alt="Chandrakala" style="max-width: 100%;"> -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- About Us Section -->
+        <div class="aboutus" id="about" style="height: 100vh; border: px solid red; justify-content: center; align-items:center ; flex-wrap: wrap;">
+            <div class="aboutUserDiv">       <img class="aboutUser" src="pics/mine.png" alt="About Me"></div>
+      
+
+            <div class="aboutContent" >
+                <h1>About Me</h1>
+                <div>
+                    <div>
+                        I’m Chandrakala, a passionate software developer with a knack for solving complex problems and building innovative solutions. My journey in tech is driven by curiosity, creativity, and a love for learning.
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <p class="hoverAbout" onclick="showSection('skills')">Skills</p>
+                        <p  class="hoverAbout"  onclick="showSection('experience')">Experience</p>
+                        <p class="hoverAbout" style="text-decoration: underline rgb(212, 31, 79) ; text-underline-offset: 10px; "  onclick="showSection('education')">Education</p>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div style="line-height: 1.5;" id="skills" class="details-section">
+                        <ul>
+                            <li>ReactJS</li>
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Tailwind</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience Section -->
+                    <div id="experience" class="details-section">
+                        <h2>Full Stack Web Developer</h2>
+                        <p>Zentience (March - October 2024)</p>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div style="line-height: 1.5; " id="education" class="details-section active">
+                        <ul>
+                            <li>
+                              <p style="color:  rgb(212, 31, 79);">2023</p>
+                                Full Stack Web Development </li>
+                            <li>
+                                <p style="color:  rgb(212, 31, 79);">2019 - 2022</p>
+                                B.Com (Computer Applications)</li>
+                            <li>
+                                <p style="color:  rgb(212, 31, 79)">2017 - 2019</p>
+                                Intermediate Commerce </li>
+                            <li>
+                                <p style="color:  rgb(212, 31, 79);">2016 - 2017</p>
+                                SSC </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="Services " id="services" >
+            <div style="width: 80%; border: px solid white; margin: auto;">
+                <div><h1>My Services</h1></div>
+                <div class="display_flexService">
+                    <div class="serviceDiv">
+                        <i style="font-size: 40px;" class="fas fa-code"></i>
+                        <h1>Web developer</h1>
+                        <div>
+                            I worked as a Full-Stack Web Developer Intern at Zentiece Company, where I contributed to the company’s product by developing features and optimizing functionality. During my time there, I gained hands-on experience with  and improved my team collaboration skills. This role helped me grow both technically and professionally.
+                        </div>
+                        <p style="margin-top: 10px;">Learn More</p>
+
+                    </div>
+                    <div class="serviceDiv">
+                        <i style="font-size: 40px;" class="fa-sharp fa-solid fa-crop"></i>
+                        <h1>Chief GIGA</h1>
+                        <div>I am proud to say that I am one of the Top 100 Giga Girls in the Generative AI Challenge. Collaborated with many talented challengers and coders. As the Chief Giga in the education field, I created my own GPT model called the Skill Recco Engine, which earned me first prize for its innovation.</div>
+                        <p style="margin-top: 10px;">Learn More</p>
+                    </div>
+                    <div class="serviceDiv">
+                        <i style="font-size: 40px;" class="fa-brands fa-app-store"></i>
+                        <h1>#33 Club</h1>
+                        <div>I volunteer at the JTD Foundation and initiated the #33Club, a fundraising program aimed at supporting society through small donations. Working alongside Dhananjay Ramakrishnappa to make a meaningful impact in students' lives. ogether, we are helping to transform futures through education."</div>
+                        <br>
+                        <p style="margin-top: 10px;">Learn More</p>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+       
+         <div id="mywork" class="Mywork" style="color: white; height: 100vh; display: flex; justify-content: center; align-items: center;">
+            <div style="width: 80%;">
+                <h1 style="color: white; text-align: start;">My Work</h1>
+                <div class="MyWorkDisplay_Flex">
+                    <!-- Work 1 -->
+                    <div class="divImag">
+                        <img class="workPics" src="pics/work-1.png" alt="Work 1" />
+                        <div class="content">
+                            <h3>Online Shopping App</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Voluptatibus eos culpa aperiam voluptatem esse consequatur iusto omnis corporis.
+                            </p>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+        
+                    <!-- Work 2 -->
+                    <div class="divImag">
+                        <img class="workPics" src="pics/work-2.png" alt="Work 2" />
+                        <div class="content">
+                            <h3>Portfolio Website</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Voluptatibus eos culpa aperiam voluptatem esse consequatur iusto omnis corporis.
+                            </p>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+        
+                    <!-- Work 3 -->
+                    <div class="divImag">
+                        <img class="workPics" src="pics/work-3.png" alt="Work 3" />
+                        <div class="content">
+                            <h3>Travel Booking App</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Voluptatibus eos culpa aperiam voluptatem esse consequatur iusto omnis corporis.
+                            </p>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+        
+                    <!-- Hidden Work Items -->
+                    <div class="divImag hidden">
+                        <img class="workPics" src="pics/work-3.png" alt="Work 4" />
+                        <div class="content">
+                            <h3>Blog Application</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Voluptatibus eos culpa aperiam voluptatem esse consequatur iusto omnis corporis.
+                            </p>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="divImag hidden">
+                        <img class="workPics" src="pics/work-1.png" alt="Work 5" />
+                        <div class="content">
+                            <h3>Music Streaming App</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Voluptatibus eos culpa aperiam voluptatem esse consequatur iusto omnis corporis.
+                            </p>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="divImag hidden">
+                        <img class="workPics" src="pics/work-2.png" alt="Work 6" />
+                        <div class="content">
+                            <h3>Task Management Tool</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Voluptatibus eos culpa aperiam voluptatem esse consequatur iusto omnis corporis.
+                            </p>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="SeeMore" onclick="toggleWorks()">See more</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Contactme" id="contact">
+            <div class="displayFlexContact">
+                <div class="ContactText" >
+                    <h1>Contact Me</h1>
+                    <a  class="email"  href="chandhu6302886523@gmail.com"> <i style="color:rgb(212, 31, 79) ; font-size: 25px;  margin-right: 10px;" class="fa-solid fa-paper-plane"></i> chandhu6302886523@gmail.com</a>
+                    <br>
+                    <br>
+                    <span > 
+                        <i style="color:rgb(212, 31, 79) ; font-size: 25px; margin-right: 10px;" class="fa-sharp fa-solid fa-square-phone"></i>
+                         9347449511</span>
+                    <br>
+                    <br>
+                    <div style="color: gray; display: flex;; gap: 20px; font-size: 30px; width: 100%;">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <br>
+                    <button class="DownloadCv">Download CV</button>
+                </div>
+                
+                    <form  class="ContactFields"  name="submit-to-google-sheet">
+                        <input  class="fields" type="text" name="Name"  placeholder="Your Name"  required/>
+                        <input class="fields" type="email" name="Email"  placeholder="Your Email"  required/>
+                        <textarea class="textareaMessage" name="Message"  placeholder="Your message"></textarea>
+                        <button type="submit"   class="SubmitButton">Submit</button>
+                    </form>
+               
+            </div>
+            <div id="successMessage" style="display: none; color: green; margin-top: 20px; text-align: center;">
+                Your details have been successfully stored! Thank you for contacting us.
+            </div>
+            <br>
+            <br>
+        </div>
+
+
+       
+        
+
+       
+
+
+    </div>
+    <div class="image">
+            
+    </div>
+    
+
+    <script>
+        function showSection(sectionId) {
+        const sections = document.querySelectorAll('.details-section');
+        sections.forEach(section => section.classList.remove('active'));
+        
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+    }
+        document.querySelectorAll('.divImag').forEach((div) => {
+        div.addEventListener('click', () => {
+            // Remove 'active' class from all divs
+            document.querySelectorAll('.divImag').forEach((d) => d.classList.remove('active'));
+
+            // Add 'active' class to clicked div
+            div.classList.add('active');
+        });
+    });
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const barsIcon = document.querySelector('.fa-bars');
+    const xmarkIcon = document.querySelector('.fa-xmark');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active'); // Toggle menu visibility
+        barsIcon.classList.toggle('hidden'); // Show/Hide hamburger icon
+        xmarkIcon.classList.toggle('hidden'); // Show/Hide cancel icon
+    });
+
+
+    // my work
+
+    function toggleWorks() {
+        const hiddenItems = document.querySelectorAll('.divImag.hidden');
+        hiddenItems.forEach(item => {
+            item.classList.toggle('show');
+        });
+
+        const button = document.querySelector('.SeeMore');
+        button.textContent = button.textContent === "See more" ? "See less" : "See more";
+        const MyworkTag = document.querySelector(".Mywork");
+        MyworkTag.style.height = "auto";
+        // const ContactTag = document.querySelector('.Contactme');
+        // Contactme.style.marginTop = "10%"
+
+        
+    }
+
+
+        
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzQJR5gphHL9stwgDnMppTOclJG1KLyAMzd5leKh_zVe8Ok_AP2-gvT79l-tlEWlwkEOA/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault(); // Prevent default form submission behavior
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: new FormData(form) 
+            })
+            .then(response => {
+                console.log('Success!', response);
+
+                // Show the success message
+                successMessage.style.display = 'block';
+
+                // Clear the form
+                form.reset();
+
+                // Optionally, hide the success message after a few seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 1000); // Hides after 5 seconds
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+            });
+        });
+
+      </script>
+</body>
+</html>
